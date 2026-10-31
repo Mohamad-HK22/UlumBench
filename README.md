@@ -19,12 +19,15 @@ This repository evaluates **new models**. The questions, answers, images and exp
 
 | Experiment | What it evaluates | Full candidate calls per model |
 | --- | --- | ---: |
+| `academic` | Label-only MCQs and final-answer open-ended questions | 6,167 |
+| `answer_format` | Baseline versus label-only MCQs, with permissive rescoring of the baseline | 8,316 |
+| `context` | Original, stripped, independently answerable and generated-answer history | 5,064 |
 | `state_assistance` | Atomic operations, oracle-assisted bundles and composed prefixes on 100 eight-step families | 1,600 |
 | `dependency_depth` | Matched independent versus dependent operation pools across all 500 families; three repetitions | 12,000 |
 | `error_recovery` | Continue or verify correct and perturbed intermediate states; three repetitions | 3,600 |
 | `reasoning_effort` | Low, medium and high effort on a fixed 658-question computer-science panel | 1,974 + open-ended grading |
 
-The academic, answer-format and context experiment runners will be contributed separately. `ulumbench list` shows what is installed. Shared academic scoring is included because the reasoning-effort experiment uses it.
+See the [academic, answer-format and context guide](docs/academic-experiments.md) for experiment designs and interpretation. Run `ulumbench list` to see all installed experiments.
 
 ## Install
 
@@ -70,7 +73,7 @@ ulumbench run --config configs/state_assistance.json \
   --output runs/state-assistance-my-model
 ```
 
-For `reasoning_effort`, add `--judge-model PROVIDER/JUDGE_MODEL` to grade open-ended answers. The selected model must support the configured reasoning effort and, for academic images, image input. The dependency-depth configuration also requires native JSON-schema output. Unsupported parameters fail explicitly. An exact candidate provider endpoint can be selected with `--provider ENDPOINT_SLUG`.
+For `academic`, `context` and `reasoning_effort`, add `--judge-model PROVIDER/JUDGE_MODEL` to grade open-ended answers. The selected model must support the configured reasoning effort and, for academic images, image input. The dependency-depth configuration also requires native JSON-schema output. Unsupported parameters fail explicitly. An exact candidate provider endpoint can be selected with `--provider ENDPOINT_SLUG`.
 
 The full commands incur provider charges. No model evaluations or paid API calls were made during release validation.
 
