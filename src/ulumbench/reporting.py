@@ -8,7 +8,7 @@ from .runner import read_rows
 
 def summarize(output):
     output = Path(output)
-    run = json.loads((output / 'run.json').read_text())
+    run = json.loads((output / 'run.json').read_text(encoding='utf-8'))
     requests = read_rows(output / 'requests.jsonl')
     scores = {r['call_id']: r['score'] for r in read_rows(output / 'scores.jsonl')}
     calls = {r['call_id']: r for r in read_rows(output / 'calls.jsonl')}

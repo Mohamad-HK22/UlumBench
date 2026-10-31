@@ -8,7 +8,7 @@ from .util import digest, file_hash
 
 def download(revision=None, local_dir=None):
     from huggingface_hub import snapshot_download
-    spec = json.loads(files('ulumbench').joinpath('dataset.json').read_text())
+    spec = json.loads(files('ulumbench').joinpath('dataset.json').read_text(encoding='utf-8'))
     return Path(snapshot_download(repo_id=spec['repo_id'], repo_type='dataset',
                                   revision=revision or spec['revision'], local_dir=local_dir or Path('datasets/ulumbench')))
 
@@ -16,7 +16,7 @@ def download(revision=None, local_dir=None):
 class Dataset:
     def __init__(self, root):
         self.root = Path(root).resolve()
-        self.manifest = json.loads((self.root / 'manifest.json').read_text())
+        self.manifest = json.loads((self.root / 'manifest.json').read_text(encoding='utf-8'))
         if self.manifest['schema_version'] != '1.0':
             raise ValueError('Unsupported dataset schema version')
         for name, expected in self.manifest['files'].items():
@@ -35,10 +35,10 @@ class Dataset:
         return path
 
     def rows(self, name):
-        return [json.loads(s) for s in self.path(name).read_text().splitlines() if s.strip()]
+        return [json.loads(s) for s in self.path(name).read_text(encoding='utf-8').splitlines() if s.strip()]
 
     def read(self, name):
-        return json.loads(self.path(name).read_text())
+        return json.loads(self.path(name).read_text(encoding='utf-8'))
 
     def content(self, question, assets):
         content = [{'type': 'text', 'text': question}]

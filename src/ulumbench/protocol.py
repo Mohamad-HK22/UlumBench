@@ -15,7 +15,7 @@ def available():
 
 
 def load_config(path):
-    config = json.loads(Path(path).read_text())
+    config = json.loads(Path(path).read_text(encoding='utf-8'))
     keys = {'experiment', 'repetitions', 'max_tokens', 'temperature', 'reasoning_effort',
             'schedule_seed', 'structured_output'}
     if set(config) - keys:

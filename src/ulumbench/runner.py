@@ -17,7 +17,7 @@ def read_rows(path):
     if not path.exists():
         return []
     try:
-        return [json.loads(line) for line in path.read_text().splitlines()]
+        return [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()]
     except ValueError as exc:
         raise ValueError(f'Incomplete journal at {path}; preserve and repair its last line before resuming') from exc
 
@@ -80,11 +80,11 @@ def run(data, config, requests, plan, output, model, judge_model, transport,
                     'provider': provider, 'implementation_sha256': implementation_hash(), 'runtime': runtime_versions()}
         manifest = output / 'run.json'
         if manifest.exists():
-            if json.loads(manifest.read_text()) != identity:
+            if json.loads(manifest.read_text(encoding='utf-8')) != identity:
                 raise ValueError('Run identity changed; use a new output directory')
         else:
-            manifest.write_text(canonical(identity) + '\n')
-            (output / 'requests.jsonl').write_text(''.join(canonical(r) + '\n' for r in requests))
+            manifest.write_text(canonical(identity) + '\n', encoding='utf-8')
+            (output / 'requests.jsonl').write_text(''.join(canonical(r) + '\n' for r in requests), encoding='utf-8')
         journal = Journal(output / 'calls.jsonl', transport, retry_errors)
         prior = {r['call_id']: r for r in read_rows(output / 'scores.jsonl')}
         generated = {}
@@ -125,5 +125,5 @@ def run(data, config, requests, plan, output, model, judge_model, transport,
             print(f'{i}/{len(requests)} {key}', flush=True)
     from .reporting import summarize
     report = summarize(output)
-    (output / 'summary.json').write_text(json.dumps(report, indent=2) + '\n')
+    (output / 'summary.json').write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
     return report

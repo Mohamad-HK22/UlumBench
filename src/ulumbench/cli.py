@@ -45,8 +45,8 @@ def main(argv=None):
     requests, plan = make_plan(data, config, args.limit)
     if args.command == 'plan':
         args.output.mkdir(parents=True, exist_ok=False)
-        (args.output / 'requests.jsonl').write_text(''.join(canonical(r) + '\n' for r in requests))
-        (args.output / 'plan.json').write_text(json.dumps(plan, indent=2) + '\n')
+        (args.output / 'requests.jsonl').write_text(''.join(canonical(r) + '\n' for r in requests), encoding='utf-8')
+        (args.output / 'plan.json').write_text(json.dumps(plan, indent=2) + '\n', encoding='utf-8')
         print(json.dumps(plan, indent=2)); return
     if plan['maximum_judge_calls'] and not args.judge_model:
         parser.error('--judge-model is required for this selection')
