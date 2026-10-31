@@ -1,0 +1,188 @@
+{
+  "units": {
+    "J": [
+      "J",
+      "joule",
+      "joules"
+    ],
+    "L": [
+      "L",
+      "liter",
+      "liters",
+      "litre",
+      "litres"
+    ],
+    "bits": [
+      "bits",
+      "bit"
+    ],
+    "bits/record": [
+      "bits/record",
+      "bit/record",
+      "bits per record"
+    ],
+    "bytes": [
+      "bytes",
+      "byte"
+    ],
+    "candidate states": [
+      "candidate states",
+      "candidate state"
+    ],
+    "candidates": [
+      "candidates",
+      "candidate"
+    ],
+    "comparisons": [
+      "comparisons",
+      "comparison"
+    ],
+    "configurations": [
+      "configurations",
+      "configuration"
+    ],
+    "currency": [
+      "currency"
+    ],
+    "currency/batch": [
+      "currency/batch",
+      "currency per batch"
+    ],
+    "currency/day": [
+      "currency/day",
+      "currency per day"
+    ],
+    "currency/year": [
+      "currency/year",
+      "currency per year"
+    ],
+    "cycles": [
+      "cycles",
+      "cycle"
+    ],
+    "edges": [
+      "edges",
+      "edge"
+    ],
+    "h": [
+      "h",
+      "hr",
+      "hrs",
+      "hour",
+      "hours"
+    ],
+    "instructions": [
+      "instructions",
+      "instruction"
+    ],
+    "ions": [
+      "ions",
+      "ion"
+    ],
+    "kJ": [
+      "kJ",
+      "kilojoule",
+      "kilojoules"
+    ],
+    "kJ/kg": [
+      "kJ/kg",
+      "kilojoule/kg",
+      "kilojoules/kg"
+    ],
+    "kW": [
+      "kW",
+      "kilowatt",
+      "kilowatts"
+    ],
+    "kWh": [
+      "kWh",
+      "kilowatt-hour",
+      "kilowatt-hours"
+    ],
+    "kWh/day": [
+      "kWh/day",
+      "kilowatt-hour/day",
+      "kilowatt-hours/day"
+    ],
+    "kg CO2/day": [
+      "kg CO2/day",
+      "kg CO₂/day",
+      "kg CO2 per day"
+    ],
+    "kg CO2/year": [
+      "kg CO2/year",
+      "kg CO₂/year",
+      "kg CO2 per year"
+    ],
+    "km": [
+      "km",
+      "kilometer",
+      "kilometers",
+      "kilometre",
+      "kilometres"
+    ],
+    "levels": [
+      "levels",
+      "level"
+    ],
+    "m^3": [
+      "m^3",
+      "m3",
+      "m³",
+      "cubic meter",
+      "cubic meters",
+      "cubic metre",
+      "cubic metres"
+    ],
+    "mol": [
+      "mol",
+      "mole",
+      "moles"
+    ],
+    "mol/L": [
+      "mol/L",
+      "mol/l",
+      "moles/L",
+      "moles/l"
+    ],
+    "ms": [
+      "ms",
+      "millisecond",
+      "milliseconds"
+    ],
+    "nodes": [
+      "nodes",
+      "node"
+    ],
+    "particles": [
+      "particles",
+      "particle"
+    ],
+    "records": [
+      "records",
+      "record"
+    ],
+    "s": [
+      "s",
+      "sec",
+      "second",
+      "seconds"
+    ],
+    "sequences": [
+      "sequences",
+      "sequence"
+    ],
+    "slot": [
+      "slot",
+      "slots"
+    ],
+    "strings": [
+      "strings",
+      "string"
+    ],
+    "symbol visits": [
+      "symbol visits",
+      "symbol visit"
+    ]
+  }
+}

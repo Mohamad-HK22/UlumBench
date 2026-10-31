@@ -1,0 +1,9 @@
+{
+  "experiment": "reasoning_effort",
+  "repetitions": 1,
+  "max_tokens": 16384,
+  "temperature": null,
+  "reasoning_effort": "low",
+  "schedule_seed": 314159,
+  "structured_output": false
+}

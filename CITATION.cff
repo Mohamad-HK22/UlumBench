@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "Please cite the UlumBench paper linked below when using this benchmark."
+title: "UlumBench: A Benchmark for Evaluating Academic and Multi-Step Problem Solving in LLMs"
+type: software
+authors:
+  - name: UlumBench contributors
+version: 1.0.0
+date-released: 2026-10-31
+url: https://ulumbench.com
+repository-code: https://github.com/Mohamad-HK22/UlumBench
+license: MIT
+identifiers:
+  - type: url
+    value: https://openreview.net/forum?id=XwNQ9m9mem
+    description: MusIML Workshop at NeurIPS 2026 paper

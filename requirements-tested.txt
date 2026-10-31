@@ -1,0 +1,6 @@
+# Direct runtime dependencies used for release validation (Python 3.14.3).
+huggingface-hub==1.13.0
+requests==2.33.1
+filelock==3.29.0
+numpy==2.4.4
+scipy==1.17.1

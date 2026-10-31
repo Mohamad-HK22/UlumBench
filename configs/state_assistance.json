@@ -1,0 +1,9 @@
+{
+  "experiment": "state_assistance",
+  "repetitions": 1,
+  "max_tokens": 8192,
+  "temperature": null,
+  "reasoning_effort": "low",
+  "schedule_seed": 314159,
+  "structured_output": false
+}

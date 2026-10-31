@@ -1,0 +1,9 @@
+{
+  "experiment": "dependency_depth",
+  "repetitions": 3,
+  "max_tokens": 8192,
+  "temperature": null,
+  "reasoning_effort": "low",
+  "schedule_seed": 314159,
+  "structured_output": true
+}
